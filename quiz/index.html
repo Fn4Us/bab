@@ -152,30 +152,39 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
         q13: ["bab", "ba a bab"]
     };
 
-    let score = 0;
-    for (let i = 1; i <= 13; i++) {
-        const userAnswer = document.querySelector(`[name="q${i}"]`).value.trim();
-        const correctAnswer = answers[`q${i}`];
+let score = 0;
+for (let i = 1; i <= 13; i++) {
+    let userAnswer = "";
+    if (i === 12 || i === 13) {
+        userAnswer = document.querySelector(`select[name="q${i}"]`).value;
+    } else {
+        userAnswer = document.querySelector(`input[name="q${i}"]`).value.trim();
+    }
 
+    const correctAnswer = answers[`q${i}`];
+
+    if (Array.isArray(correctAnswer)) {
+        if (correctAnswer.includes(userAnswer)) {
+            score++;
+        }
+    } else {
         if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
             score++;
         }
-    const quizContainer = document.getElementById('quizContainer');
-    const resultContainer = document.getElementById('resultContainer');
-    const scoreText = document.getElementById('scoreText');
+    }
+}
 
-    quizContainer.style.display = 'none';
-    resultContainer.style.display = 'block';
-    scoreText.textContent = `Your score is: ${score}/13`;
+const quizContainer = document.getElementById('quizContainer');
+const resultContainer = document.getElementById('resultContainer');
+const scoreText = document.getElementById('scoreText');
 
-    const tryAgainBtn = document.getElementById('tryAgainBtn');
-    tryAgainBtn.addEventListener('click', function() {
-        quizContainer.style.display = 'block';
-        resultContainer.style.display = 'none';
-        document.getElementById('quizForm').reset();
-    });
+quizContainer.style.display = 'none';
+resultContainer.style.display = 'block';
+scoreText.textContent = `Your score is: ${score}/13`;
+
+const tryAgainBtn = document.getElementById('tryAgainBtn');
+tryAgainBtn.addEventListener('click', function() {
+    quizContainer.style.display = 'block';
+    resultContainer.style.display = 'none';
+    document.getElementById('quizForm').reset();
 });
-</script>
-
-</body>
-</html>
