@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language Quiz</title>
+</head>
+<body>
+
+<h2>Language Quiz</h2>
+<form id="quizForm">
+    <ol>
+        <li>
+            <p>1. Where do adjectives go in relation to nouns?</p>
+            <label>
+                Adjectives go <input type="text" name="q1" required> the noun. (Before/After)
+            </label>
+        </li>
+        <li>
+            <p>2. Write the order of a sentence in bab, placing these elements. Object, Subject, Preposition, Verb.</p>
+            <label>
+                <select name="q2" required>
+                    <option value="">Select an answer</option>
+                    <option value="Subject, Verb, Object, Preposition">Subject, Verb, Object, Preposition</option>
+                    <option value="Subject, Object, Verb, Preposition">Subject, Object, Verb, Preposition</option>
+                    <option value="Preposition, Object, Subject, Verb">Preposition, Object, Subject, Verb</option>
+                    <option value="Preposition, Object, Subject, Verb">Preposition, Object, Subject, Verb</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <p>3. What do you do if there is no object in a sentence, but there is still a preposition?</p>
+            <label>
+                <select name="q3" required>
+                    <option value="">Select an answer</option>
+                    <option value="A">Nothing</option>
+                    <option value="B">Add one more "ba"</option>
+                    <option value="C">Use the word “ab” to mark it as a preposition</option>
+                    <option value="D">You can’t make a sentence like that</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <p>4. How do you say "I" in a sentence?</p>
+            <label>
+                <select name="q4" required>
+                    <option value="">Select an answer</option>
+                    <option value="A">ab a</option>
+                    <option value="B">ab</option>
+                    <option value="C">ababa</option>
+                    <option value="D">Nothing</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <p>5. What do you put in the subject if the listener/you is doing the action?</p>
+            <label>
+                <select name="q5" required>
+                    <option value="">Select an answer</option>
+                    <option value="A">ababa</option>
+                    <option value="B">ab</option>
+                    <option value="C">Nothing</option>
+                    <option value="D">You can’t use sentences with you</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <p>6. What is this number? .a a a a a a a a a.</p>
+            <label>
+                <select name="q6" required>
+                    <option value="">Select an answer</option>
+                    <option value="A">14</option>
+                    <option value="B">9</option>
+                    <option value="C">6</option>
+                    <option value="D">10</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <p>7. Which of the following is using .XXX XXX. Incorrectly?</p>
+            <label>
+                <select name="q7" required>
+                    <option value="">Select an answer</option>
+                    <option value="A">ab abab .a a a.</option>
+                    <option value="B">bab .a bab.</option>
+                    <option value="C">ab .a a a a.</option>
+                    <option value="D">a abab .a baba.</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <p>8. What word is used for the future tense?</p>
+            <label>
+                <input type="text" name="q8" required>
+            </label>
+        </li>
+        <li>
+            <p>9. What word changes another word’s part of speech? (i.e noun to adjective, adjective to verb)</p>
+            <label>
+                <input type="text" name="q9" required>
+            </label>
+        </li>
+        <li>
+            <p>10. How do you ask a yes or no question?</p>
+            <label>
+                <select name="q10" required>
+                    <option value="">Select an answer</option>
+                    <option value="A">Put "a a" at the end of the sentence</option>
+                    <option value="B">Put "a a" in the place of the preposition</option>
+                    <option value="C">Put "a a" in the place of the object</option>
+                    <option value="D">Put "a a" in the place of the subject</option>
+                </select>
+            </label>
+        </li>
+        <li>
+            <p>11. What phrase do you use to continue or to create meaning a sentence?</p>
+            <label>
+                <input type="text" name="q11" required>
+            </label>
+        </li>
+        <li>
+            <p>12. What word do you use to make "or" statements?</p>
+            <label>
+                <input type="text" name="q12" required>
+            </label>
+        </li>
+        <li>
+            <p>13. Give any common greeting:</p>
+            <label>
+                <input type="text" name="q13" required>
+            </label>
+        </li>
+    </ol>
+    <button type="submit">Submit Answers</button>
+</form>
+
+<script>
+document.getElementById('quizForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const answers = {
+        q1: ["After", "after"]
+        q2: "Subject, Verb, Object, Preposition",
+        q3: "B",
+        q4: "A",
+        q5: "C",
+        q6: "B",
+        q7: "C",
+        q8: "ababa",
+        q9: "a",
+        q10: "B",
+        q11: "a:",
+        q12: ["ababa", "ababa a:", "a:"],
+        q13: ["bab", "ba a bab"]
+    };
+
+    let score = 0;
+    for (let i = 1; i <= 13; i++) {
+        const userAnswer = document.querySelector(`[name="q${i}"]`).value.trim();
+        const correctAnswer = answers[`q${i}`];
+
+        if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+            score++;
+        }
+    const quizContainer = document.getElementById('quizContainer');
+    const resultContainer = document.getElementById('resultContainer');
+    const scoreText = document.getElementById('scoreText');
+
+    quizContainer.style.display = 'none';
+    resultContainer.style.display = 'block';
+    scoreText.textContent = `Your score is: ${score}/13`;
+
+    const tryAgainBtn = document.getElementById('tryAgainBtn');
+    tryAgainBtn.addEventListener('click', function() {
+        quizContainer.style.display = 'block';
+        resultContainer.style.display = 'none';
+        document.getElementById('quizForm').reset();
+    });
+});
+</script>
+
+</body>
+</html>
