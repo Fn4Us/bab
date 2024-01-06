@@ -2,17 +2,67 @@
 <html>
 <head>
     <title>Language Quiz</title>
+    <style>
+body {
+background-color: lightblue;
+font-family: Helvetica;
+}
+
+#main {
+width: 80%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 70px;
+background: lightgrey;
+color: black;
+text-align: center;
+border-radius: 10px;
+}
+
+label {
+display: block;
+}
+
+input {
+width: 300px;
+margin-left: 0px;
+}
+
+#input2 {
+width: 100px;
+margin-left: 0px;
+}
+
+
+button {
+width: 100px;
+margin-top: 20px;
+}
+</style>
 </head>
 <body>
 
-<div id="quizContainer">
+
+<div id="main">
+<div id="header">
 <h2>Language Quiz</h2>
-<form id="quizForm">
+</div id="header">
+<form id="form1">
     <ol>
         <li>
             <p>1. Where do adjectives go in relation to nouns?</p>
             <label>
-                Adjectives go <input type="text" name="q1" required> the noun. (Before/After)
+                Adjectives go <input id="input2" type="text" name="q1" required> the noun. (Before/After)
             </label>
         </li>
         <li>
@@ -20,10 +70,10 @@
             <label>
                 <select name="q2" required>
                     <option value="">Select an answer</option>
-                    <option value="Subject, Verb, Object, Preposition">Subject, Verb, Object, Preposition</option>
-                    <option value="Subject, Object, Verb, Preposition">Subject, Object, Verb, Preposition</option>
-                    <option value="Preposition, Object, Subject, Verb">Preposition, Object, Subject, Verb</option>
-                    <option value="Preposition, Object, Subject, Verb">Preposition, Object, Subject, Verb</option>
+                    <option value="1">Subject, Verb, Object, Preposition</option>
+                    <option value="0">Subject, Object, Verb, Preposition</option>
+                    <option value="0">Preposition, Object, Subject, Verb</option>
+                    <option value="0">Preposition, Object, Subject, Verb</option>
                 </select>
             </label>
         </li>
@@ -32,10 +82,10 @@
             <label>
                 <select name="q3" required>
                     <option value="">Select an answer</option>
-                    <option value="A">Nothing</option>
-                    <option value="B">Add one more "ba"</option>
-                    <option value="C">Use the word “ab” to mark it as a preposition</option>
-                    <option value="D">You can’t make a sentence like that</option>
+                    <option value="0.5">Nothing</option>
+                    <option value="1">Add one more "ba"</option>
+                    <option value="0">Use the word “ab” to mark it as a preposition</option>
+                    <option value="0">You can’t make a sentence like that</option>
                 </select>
             </label>
         </li>
@@ -44,10 +94,10 @@
             <label>
                 <select name="q4" required>
                     <option value="">Select an answer</option>
-                    <option value="A">ab a</option>
-                    <option value="B">ab</option>
-                    <option value="C">ababa</option>
-                    <option value="D">Nothing</option>
+                    <option value="1">ab a</option>
+                    <option value="0">ab</option>
+                    <option value="0">ababa</option>
+                    <option value="0">Nothing</option>
                 </select>
             </label>
         </li>
@@ -56,10 +106,10 @@
             <label>
                 <select name="q5" required>
                     <option value="">Select an answer</option>
-                    <option value="A">ababa</option>
-                    <option value="B">ab</option>
-                    <option value="C">Nothing</option>
-                    <option value="D">You can’t use sentences with you</option>
+                    <option value="0">ababa</option>
+                    <option value="0">ab</option>
+                    <option value="1">Nothing</option>
+                    <option value="0">You can’t use sentences with you</option>
                 </select>
             </label>
         </li>
@@ -68,10 +118,10 @@
             <label>
                 <select name="q6" required>
                     <option value="">Select an answer</option>
-                    <option value="A">14</option>
-                    <option value="B">9</option>
-                    <option value="C">6</option>
-                    <option value="D">10</option>
+                    <option value="0">14</option>
+                    <option value="1">9</option>
+                    <option value="0">6</option>
+                    <option value="0">10</option>
                 </select>
             </label>
         </li>
@@ -80,10 +130,10 @@
             <label>
                 <select name="q7" required>
                     <option value="">Select an answer</option>
-                    <option value="A">ab abab .a a a.</option>
-                    <option value="B">bab .a bab.</option>
-                    <option value="C">ab .a a a a.</option>
-                    <option value="D">a abab .a baba.</option>
+                    <option value="0">ab abab .a a a.</option>
+                    <option value="0">bab .a bab.</option>
+                    <option value="1">ab .a a a a.</option>
+                    <option value="0">a abab .a baba.</option>
                 </select>
             </label>
         </li>
@@ -104,10 +154,10 @@
             <label>
                 <select name="q10" required>
                     <option value="">Select an answer</option>
-                    <option value="A">Put "a a" at the end of the sentence</option>
-                    <option value="B">Put "a a" in the place of the preposition</option>
-                    <option value="C">Put "a a" in the place of the object</option>
-                    <option value="D">Put "a a" in the place of the subject</option>
+                    <option value="0">Put "a a" at the end of the sentence</option>
+                    <option value="1">Put "a a" in the place of the preposition</option>
+                    <option value="0">Put "a a" in the place of the object</option>
+                    <option value="0">Put "a a" in the place of the subject</option>
                 </select>
             </label>
         </li>
@@ -130,79 +180,76 @@
             </label>
         </li>
     </ol>
-    <button type="submit">Submit Answers</button>
+    <button type="submit" value="Submit">Submit Answers</button>
 </form>
-</div>
-    
-<div id="resultContainer" style="display: none;">
-    <h2>Quiz Result</h2>
-    <p id="scoreText"></p>
-    <button id="tryAgainBtn">Try Again</button>
-</div>
+
+
+<p> Your score is: <span id="grade">____</span>/13</p>
+<p id="grade2"></p>
+<div>
 
 <script>
-document.getElementById('quizForm').addEventListener('submit', function(event) {
-    event.preventDefault();
 
 
-    const answers = {
-        q1: ["After", "after"]
-        q2: "Subject, Verb, Object, Preposition",
-        q3: "B",
-        q4: "A",
-        q5: "C",
-        q6: "B",
-        q7: "C",
-        q8: "ababa",
-        q9: "a",
-        q10: "B",
-        q11: "a:",
-        q12: ["ababa", "ababa a:", "a:"],
-        q13: ["bab", "ba a bab"]
+    <script>
+        const answers = {
+            q1: ["After", "after"],
+            q2: "Subject, Verb, Object, Preposition",
+            q3: "B",
+            q4: "A",
+            q5: "C",
+            q6: "B",
+            q7: "C",
+            q8: "ababa",
+            q9: "a",
+            q10: "B",
+            q11: "a:",
+            q12: ["ababa", "ababa a:", "a:"],
+            q13: ["bab", "ba a bab"]
+        };
+    document.getElementById("form1").onsubmit = function(event) {
+        event.preventDefault(); // prevent form submission
+
+        let result = 0;
+
+        for (let i = 1; i <= 13; i++) {
+            const question = "q" + i;
+            let userAnswer;
+
+            if (i === 2 || i === 3 || i === 7 || i === 10 || i === 12 || i === 13) {
+                userAnswer = document.querySelector('select[name="' + question + '"]').value;
+            } else {
+                userAnswer = document.querySelector('input[name="' + question + '"]').value.toLowerCase();
+            }
+
+            if (Array.isArray(answers[question])) {
+                if (answers[question].includes(userAnswer.toLowerCase())) {
+                    result += 1;
+                }
+            } else {
+                if (answers[question].toLowerCase() === userAnswer.toLowerCase()) {
+                    result += 1;
+                }
+            }
+        }
+
+        document.getElementById("grade").innerHTML = result + "/13";
+
+        let result2 = "";
+        if (result === 0) {
+            result2 = "I don't think you studied.";
+        } else if (result < 5) {
+            result2 = "You need to spend more time. Try again.";
+        } else if (result < 10) {
+            result2 = "I think you could do better. Try again.";
+        } else if (result === 13) {
+            result2 = "Excellent! You're a JavaScript pro!";
+        } else {
+            result2 = "So close. Try again.";
+        }
+
+        document.getElementById("grade2").innerHTML = result2;
     };
-
-let score = 0;
-    for (let i = 1; i <= 13; i++) {
-        let userAnswer = "";
-        if (i === 12 || i === 13) {
-            userAnswer = document.querySelector(`select[name="q${i}"]`).value;
-        } else {
-            userAnswer = document.querySelector(`input[name="q${i}"]`).value.trim();
-        }
-
-        const correctAnswer = answers[`q${i}`];
-
-        if (Array.isArray(correctAnswer)) {
-            if (correctAnswer.includes(userAnswer)) {
-                score++;
-            }
-        } else {
-            if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-                score++;
-            }
-        }
-    }
-
-
-    const quizContainer = document.getElementById('quizContainer');
-    quizContainer.style.display = 'none';
-
-    const resultContainer = document.getElementById('resultContainer');
-    const scoreText = document.getElementById('scoreText');
-    const tryAgainBtn = document.getElementById('tryAgainBtn');
-
-    resultContainer.style.display = 'block';
-    scoreText.textContent = `Your score is: ${score}/13`;
-    tryAgainBtn.style.display = 'block';
-
-    tryAgainBtn.addEventListener('click', function() {
-        quizContainer.style.display = 'block';
-        resultContainer.style.display = 'none';
-        document.getElementById('quizForm').reset();
-        tryAgainBtn.style.display = 'none';
-    });
-});
-</script>
 </script>
 </body>
 </html>
