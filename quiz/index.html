@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Language Quiz</title>
+    <title>Bab Quiz</title>
     <style>
 body {
 background-color: lightblue;
@@ -38,218 +38,181 @@ width: 300px;
 margin-left: 0px;
 }
 
-#input2 {
+input[type="radio"] {
+width: 50px;
+}
+
+#input1 {
 width: 100px;
 margin-left: 0px;
 }
 
 
 button {
-width: 100px;
+width: 150px;
 margin-top: 20px;
+background: lightgrey;
+border-radius: 10px;
 }
 </style>
 </head>
 <body>
-
-
 <div id="main">
 <div id="header">
-<h2>Language Quiz</h2>
-</div id="header">
-<form id="form1">
-    <ol>
-        <li>
-            <p>1. Where do adjectives go in relation to nouns?</p>
-            <label>
-                Adjectives go <input id="input2" type="text" name="q1" required> the noun. (Before/After)
-            </label>
-        </li>
-        <li>
-            <p>2. Write the order of a sentence in bab, placing these elements. Object, Subject, Preposition, Verb.</p>
-            <label>
-                <select name="q2" required>
-                    <option value="">Select an answer</option>
-                    <option value="1">Subject, Verb, Object, Preposition</option>
-                    <option value="0">Subject, Object, Verb, Preposition</option>
-                    <option value="0">Preposition, Object, Subject, Verb</option>
-                    <option value="0">Preposition, Object, Subject, Verb</option>
-                </select>
-            </label>
-        </li>
-        <li>
-            <p>3. What do you do if there is no object in a sentence, but there is still a preposition?</p>
-            <label>
-                <select name="q3" required>
-                    <option value="">Select an answer</option>
-                    <option value="0.5">Nothing</option>
-                    <option value="1">Add one more "ba"</option>
-                    <option value="0">Use the word “ab” to mark it as a preposition</option>
-                    <option value="0">You can’t make a sentence like that</option>
-                </select>
-            </label>
-        </li>
-        <li>
-            <p>4. How do you say "I" in a sentence?</p>
-            <label>
-                <select name="q4" required>
-                    <option value="">Select an answer</option>
-                    <option value="1">ab a</option>
-                    <option value="0">ab</option>
-                    <option value="0">ababa</option>
-                    <option value="0">Nothing</option>
-                </select>
-            </label>
-        </li>
-        <li>
-            <p>5. What do you put in the subject if the listener/you is doing the action?</p>
-            <label>
-                <select name="q5" required>
-                    <option value="">Select an answer</option>
-                    <option value="0">ababa</option>
-                    <option value="0">ab</option>
-                    <option value="1">Nothing</option>
-                    <option value="0">You can’t use sentences with you</option>
-                </select>
-            </label>
-        </li>
-        <li>
-            <p>6. What is this number? .a a a a a a a a a.</p>
-            <label>
-                <select name="q6" required>
-                    <option value="">Select an answer</option>
-                    <option value="0">14</option>
-                    <option value="1">9</option>
-                    <option value="0">6</option>
-                    <option value="0">10</option>
-                </select>
-            </label>
-        </li>
-        <li>
-            <p>7. Which of the following is using .XXX XXX. Incorrectly?</p>
-            <label>
-                <select name="q7" required>
-                    <option value="">Select an answer</option>
-                    <option value="0">ab abab .a a a.</option>
-                    <option value="0">bab .a bab.</option>
-                    <option value="1">ab .a a a a.</option>
-                    <option value="0">a abab .a baba.</option>
-                </select>
-            </label>
-        </li>
-        <li>
-            <p>8. What word is used for the future tense?</p>
-            <label>
-                <input type="text" name="q8" required>
-            </label>
-        </li>
-        <li>
-            <p>9. What word changes another word’s part of speech? (i.e noun to adjective, adjective to verb)</p>
-            <label>
-                <input type="text" name="q9" required>
-            </label>
-        </li>
-        <li>
-            <p>10. How do you ask a yes or no question?</p>
-            <label>
-                <select name="q10" required>
-                    <option value="">Select an answer</option>
-                    <option value="0">Put "a a" at the end of the sentence</option>
-                    <option value="1">Put "a a" in the place of the preposition</option>
-                    <option value="0">Put "a a" in the place of the object</option>
-                    <option value="0">Put "a a" in the place of the subject</option>
-                </select>
-            </label>
-        </li>
-        <li>
-            <p>11. What phrase do you use to continue or to create meaning a sentence?</p>
-            <label>
-                <input type="text" name="q11" required>
-            </label>
-        </li>
-        <li>
-            <p>12. What word do you use to make "or" statements?</p>
-            <label>
-                <input type="text" name="q12" required>
-            </label>
-        </li>
-        <li>
-            <p>13. Give any common greeting:</p>
-            <label>
-                <input type="text" name="q13" required>
-            </label>
-        </li>
-    </ol>
-    <button type="submit" value="Submit">Submit Answers</button>
-</form>
+<h2>Bab quiz</h2>
+</div>
+<h3> 1. Where do adjectives go in relation to nouns? </h3>
+<h5> Adjectives go <input id="input1" type="text" name="q1" placeholder="Before/After" required> the noun </h5>
 
+<h3> 2. Write the order of a sentence in bab, placing these elements. Object, Subject, Preposition, Verb. </h3>
+<input type="radio" name="question2" id="correct2">Subject, Verb, Object, Preposition<br>
+<input type="radio" name="question2" id="">Subject, Object, Verb, Preposition<br> 
+<input type="radio" name="question2" id="">Preposition, Object, Subject, Verb<br> 
+<input type="radio" name="question2" id="">Subject, Preposition, Object, Verb<br> 
 
-<p> Your score is: <span id="grade">____</span>/13</p>
-<p id="grade2"></p>
-<div>
+<h3> 3. What do you do if there is no object in a sentence, but there is still a preposition? </h3>
+<input type="radio" name="question3" id="">Nothing<br>
+<input type="radio" name="question3" id="correct3">Add one more "ba"<br>
+<input type="radio" name="question3" id="">Use the word “ab” to mark it as a preposition<br>
+<input type="radio" name="question3" id="">You can’t make a sentence like that<br>
 
+<h3> 4. How do you say "I" in a sentence? </h3> 
+<input type="radio" name="question4" id="correct4">ab a<br>
+<input type="radio" name="question4" id="">ab<br>
+<input type="radio" name="question4" id="">ababa<br>
+<input type="radio" name="question4" id="">Nothing<br>
+
+<h3>5. What do you put in the subject if the listener/you is doing the action? </h3>
+<input type="radio" name="question5" id="">ab<br>
+<input type="radio" name="question5" id="">ababa<br>
+<input type="radio" name="question5" id="correct5">Nothing<br>
+<input type="radio" name="question5" id="">You can't use sentences with you<br>
+
+<h3> 6. What is this number? .a a a a a a a a a. </h3>
+<input type="radio" name="question6" id="">14<br>
+<input type="radio" name="question6" id="correct6">9<br>
+<input type="radio" name="question6" id="">6<br>
+<input type="radio" name="question6" id="">10<br>
+
+<h3> 7. Which of the following is using .XXX XXX. Incorrectly? </h3>
+<input type="radio" name="question7" id="">ab abab .a a a.<br>
+<input type="radio" name="question7" id="">bab .a bab.<br>
+<input type="radio" name="question7" id="correct7">ab .a a a.<br>
+<input type="radio" name="question7" id="">a abab .a baba.<br>
+
+<h3> 8. What word is used for the future tense? </h3>
+<input id="input8" type="text" name="q8" placeholder="Input answer" required><br><br>
+
+<h3> 9. What word changes another word’s part of speech? (i.e noun to adjective, adjective to verb)</h3>
+<input id="input9" type="text" name="q9" placeholder="Input answer" required><br><br>
+
+<h3> 10. How do you ask a yes or no question?</h3>
+<input type="radio" name="question10" id="">Put "a a" at the end of the sentence<br>
+<input type="radio" name="question10" id="correct10">Put "a a" in the place of the preposition<br>
+<input type="radio" name="question10" id="">Put "a a" in the place of the object<br>
+<input type="radio" name="question10" id="">Put "a a" in the place of the subject<br>
+
+<h3> 11. What phrase do you use to continue or to create meaning a sentence?</h3>
+<input id="input11" type="text" name="q11" placeholder="Input answer" required><br><br>
+
+<h3> 12. What word do you use to make "or" statements?</h3>
+<input id="input12" type="text" name="q12" placeholder="Input answer" required><br><br>
+
+<h3> 13. Give any common greeting.</h3>
+<input id="input13" type="text" name="q13" placeholder="Input answer" required><br><br>
+
+<button type="submit" value="Submit" onclick="result()" id="submitBtn" style="display: block;">Submit Answers</button>
+
+<p><span id="grade"></span></p>
+<p> <span id="grade2"></span> </p>
+<a href="https://8-word-language.org/quiz">
+    <button id="restartBtn" style="display: none;">Restart Quiz</button>
+</a>
 <script>
-
-
-    <script>
-        const answers = {
-            q1: ["After", "after"],
-            q2: "Subject, Verb, Object, Preposition",
-            q3: "B",
-            q4: "A",
-            q5: "C",
-            q6: "B",
-            q7: "C",
-            q8: "ababa",
-            q9: "a",
-            q10: "B",
-            q11: "a:",
-            q12: ["ababa", "ababa a:", "a:"],
-            q13: ["bab", "ba a bab"]
-        };
-    document.getElementById("form1").onsubmit = function(event) {
-        event.preventDefault(); // prevent form submission
-
-        let result = 0;
-
-        for (let i = 1; i <= 13; i++) {
-            const question = "q" + i;
-            let userAnswer;
-
-            if (i === 2 || i === 3 || i === 7 || i === 10 || i === 12 || i === 13) {
-                userAnswer = document.querySelector('select[name="' + question + '"]').value;
-            } else {
-                userAnswer = document.querySelector('input[name="' + question + '"]').value.toLowerCase();
-            }
-
-            if (Array.isArray(answers[question])) {
-                if (answers[question].includes(userAnswer.toLowerCase())) {
-                    result += 1;
-                }
-            } else {
-                if (answers[question].toLowerCase() === userAnswer.toLowerCase()) {
-                    result += 1;
-                }
-            }
-        }
-
-        document.getElementById("grade").innerHTML = result + "/13";
-
-        let result2 = "";
-        if (result === 0) {
-            result2 = "I don't think you studied.";
-        } else if (result < 5) {
+function result() {
+	var score=0;
+    var inputValue = document.getElementById('input1').value.toLowerCase();
+    if (inputValue==="after") 
+    {
+	score++;
+    }
+    if (document.getElementById('correct2').checked) 
+    {
+	score++;
+    }
+    if (document.getElementById('correct3').checked) 
+    {
+	score++;
+    }
+    if (document.getElementById('correct4').checked) 
+    {
+	score++;
+    }
+    if (document.getElementById('correct5').checked) 
+    {
+	score++;
+    }
+    if (document.getElementById('correct6').checked) 
+    {
+	score++;
+    }
+    if (document.getElementById('correct7').checked) 
+    {
+	score++;
+    }
+	var inputValue = document.getElementById('input8').value.toLowerCase();
+    if (inputValue==="ababa") 
+    {
+	score++;
+    }
+    var inputValue = document.getElementById('input9').value.toLowerCase();
+    if (inputValue==="a") 
+    {
+	score++;
+    }
+    if (document.getElementById('correct10').checked) 
+    {
+	score++;
+    }
+	var inputValue = document.getElementById('input11').value.toLowerCase();
+    if (inputValue==="a:") 
+    {
+	score++;
+    }
+    var inputValue = document.getElementById('input12').value.toLowerCase();
+    if (inputValue === "ababa" || inputValue === "ababa a:" || inputValue === "a:")
+    {
+	score++;
+    }
+    var inputValue = document.getElementById('input13').value.toLowerCase();
+    if (inputValue === "bab" || inputValue === "ba a bab" || inputValue === "bab!" || inputValue === "ba a bab!")
+    {
+	score++;
+    }
+    
+    
+    document.getElementById("grade").innerHTML = "Your score is "+ score +"/13";
+    
+    
+    let result2 = "";
+        if (score === 0) {
+            result2 = "I don't think you read the book";
+        } else if (score < 6) {
             result2 = "You need to spend more time. Try again.";
-        } else if (result < 10) {
-            result2 = "I think you could do better. Try again.";
-        } else if (result === 13) {
-            result2 = "Excellent! You're a JavaScript pro!";
-        } else {
-            result2 = "So close. Try again.";
-        }
+        } else if (score < 11) {
+            result2 = "You are so close to fluency, Try again.";
+        } else if (score >= 11) {
+            result2 = "Excellent! You are now a speaker of bab!";
+        } 
 
         document.getElementById("grade2").innerHTML = result2;
-    };
-</script>
-</body>
-</html>
+        document.getElementById("submitBtn").style.display = "none";
+
+    if (score < 11) {
+    document.getElementById("restartBtn").style.display = "block";
+	}
+    
+    }
+    </script>
+    </body>
+    </html>
